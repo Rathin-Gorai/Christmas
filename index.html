@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Merry Christmas</title>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merienda|Lobster|Chewy|Sofia" title="" type="" />
+        <script src="https://chigozie-coder.github.io/Swoader/Swoader.js"></script>
+         <script type="text/javascript" charset="utf-8">
+           var swoader = new Swoader("white","80","#272727");
+           swoader.start()
+           swoader.addText("loading","40px","white")
+           swoader.animateText()
+           swoader.removeWhenWindowLoaded()
+            
+        </script>
+        <script type="text/javascript" charset="utf-8">
+            onload = function (){
+    c = canvas.getContext('2d');
+    canvas.width = W = innerWidth;
+    canvas.height = H = innerHeight;
+    var amplitude = [];
+    var frequency = [];
+    var speed = [];
+    var snow = 400;
+    var tilt = [];
+    var addX = [];
+    var y = []
+    var r = []
+    function setUp(){
+        for(i = 0; i < snow; i++){
+            y[i] = Math.floor(Math.random()*H);
+            addX[i] = Math.floor(Math.random()*W *3/2-W/2);
+            r[i] = Math.floor(Math.random()*4+1)
+            frequency[i] = Math.floor(Math.random()*20+20)
+            amplitude[i] = Math.floor(Math.random()*6+2)
+            speed[i] = Math.random()+1
+            tilt[i] = 0;
+        }
+    }
+    setUp();
+    function reset(i){
+        y[i] = Math.floor(Math.random()*-50);
+        addX[i] = Math.floor(Math.random()*W*3/2-W/3*2);
+        r[i] = Math.floor(Math.random()*4+1)
+        frequency[i] = Math.floor(Math.random()*20+20)
+        amplitude[i] = Math.floor(Math.random()*6+2)
+        tilt[i] = 0;
+    }
+    function draw(){
+            c.clearRect(0, 0, canvas.width, canvas.height);
+        for(i = 0; i < snow; i++){
+              y[i]+=speed[i];
+            x = amplitude[i] * Math.cos(y[i]/frequency[i]) + addX[i] + tilt[i]
+            c.beginPath()
+              c.arc(x, y[i], r[i], 0, Math.PI * 2)
+              c.fillStyle = "white"
+              c.fill()
+              tilt[i]+=.5;
+              if(y[i] > H || x > W){
+                  reset(i);
+              }
+          }
+          requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+}
+function go(){
+    document.getElementById("cs").play()
+    document.getElementById("first").style.animation="fade 1.5s linear"
+    setTimeout(function(){
+    document.getElementById("first").style.display="none"
+    document.getElementById("next").style.display="block"
+    },1500)
+}
+        </script>
+        <style type="text/css" >
+       #next{
+           display: none;
+       }
+            html,body{
+                background: url("https://cdn.pixabay.com/photo/2019/08/08/22/11/christmas-winter-background-4393903_1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+                
+            }
+            #tree{
+                position: absolute;
+                top: 90px;
+            }
+            #star{
+                position: absolute;
+                font-size: 65px;
+                font-weight: bolder;
+                color: #DAA719;
+                left: 160px;
+                top: -25px;
+                animation: tsa 500ms ease alternate infinite;
+            }
+            .t1,.t2,.t3,.t4,.ts,.tb1,.tb2,.tb3,.tb4,.tb5,.tb6{
+                position: absolute;
+            }
+            .t1{
+                background-image: linear-gradient(to top right, #3FA314 50%, transparent 50%);
+                width: 100px;
+                height: 100px;
+                transform: rotate(135deg);
+                top: 50px;
+                left: 140px;
+            }
+            .t2{
+                background-image: linear-gradient(to top right, #3FA314 50%, transparent 50%);
+                width: 120px;
+                height: 120px;
+                transform: rotate(135deg);
+                top: 80px;
+                left: 130px;
+            }
+            .t3{
+                background-image: linear-gradient(to top right, #3FA314 50%, transparent 50%);
+                width: 140px;
+                height: 140px;
+                transform: rotate(135deg);
+                top: 110px;
+                left: 120px;
+            }
+            .t4{
+                background-image: linear-gradient(to top right, #3FA314 50%, transparent 50%);
+                width: 160px;
+                height: 160px;
+                transform: rotate(135deg);
+                top: 140px;
+                left: 110px;
+            }
+           .ts{
+                background: #453B33;
+                height: 70px;
+                width: 20px;
+                top: 220px;
+                left: 180px;
+            }
+            .tb1,.tb2,.tb3,.tb4,.tb5,.tb6{
+                border-radius: 50%;
+                height: 20px;
+                width: 20px;
+                background-color: red;
+                opacity: 0.5;
+            }
+            .tb1{
+                top: 50px;
+                left: 180px;
+                animation: tba 1200ms linear infinite alternate 100ms;
+                box-shadow: 0 0 20px red;
+            }
+            .tb2{
+                top: 100px;
+                left: 150px;
+                animation: tba 1200ms linear infinite alternate 100ms;
+                box-shadow: 0 0 20px red;
+            }
+            .tb3{
+                top: 120px;
+                left: 220px;
+                animation: tba 1200ms linear infinite alternate 100ms;
+                box-shadow: 0 0 20px red;
+            }
+            .tb4{
+                top: 145px;
+                left: 170px;
+                animation: tba 1200ms linear infinite alternate 300ms;
+                box-shadow: 0 0 20px red;
+            }
+            .tb5{
+                top: 170px;
+                left: 130px;
+                animation: tba 1200ms linear infinite alternate 500ms;
+                box-shadow: 0 0 20px red;
+            }
+            .tb6{
+                top: 190px;
+                left: 220px;
+                animation: tba 1200ms linear infinite alternate 800ms;
+                box-shadow: 0 0 20px red;
+            }
+            @keyframes tba{
+                10%,20%{background-color:#28E200;}
+                50%,30%{background-color:gold;}
+                100%,40%{background-color:white;}
+                90%{background-color: red;}
+            }
+            @keyframes tsa{
+                100%{text-shadow: 0 0 10px ;}
+            }
+            #ci{
+                height: 100px;
+                width: 200px;
+                position: absolute;
+                top: 50px;
+                left: 90px;
+            }
+            #bi{
+                height: 100px;
+                width: 200px;
+                position: absolute;
+                top: 390px;
+                left: 90px;
+            }
+            #first{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 40%;
+                color: #eee;
+                font-weight: bolder;
+                font-size: 20px;
+                font-family: 'Lobster';
+            }
+            button{
+                width: 140px;
+                height: 50px;
+                align-content: center;
+                font-size: 20px;
+                background-color: #00D6FF;
+                color:#eee;
+                outline: none;
+                border: none;
+                border-radius: 30px;
+                font-family: 'Sofia';
+                font-weight: bolder;
+            }
+            @keyframes fade {
+                100%{
+                    opacity: 0;
+                }
+            }
+            #ht{
+                text-align: center;
+                font-size: 40px;
+                font-family: 'Merienda';
+                color: #eee;
+            }
+        </style>
+    </head>
+        <div id="first">
+            <div id="bt">
+                And she shalt bring forth a child and thou shalt call his name JESUS: for he shall save his people from their sins.
+            </div>
+            <div id="ct">
+                MERRY CHRISTMAS!
+            </div>
+            <button onclick="go()">Continue</button>
+        </div>
+        <div id="next">
+            <div id="ht">
+                Merry Christmas
+            </div>
+        <div id="tree">
+   <div class="t1"></div>
+   <div class="t2"></div>
+   <div class="t3"></div>
+   <div class="t4"></div>
+   <div class="ts"></div>
+   <div id="star">★</div>
+   <div class="tb1"></div>
+   <div class="tb2"></div>
+   <div class="tb3"></div>
+   <div class="tb4"></div>
+   <div class="tb5"></div>
+   <div class="tb6"></div>
+   <img id="ci" src="https://i.ibb.co/4FX5CPS/Screenshot-20211220-174200-1-removebg-preview.png" alt="" />
+        </div>
+        <img id="bi" src="https://i.ibb.co/bgp0LZx/63-636531-christmas-background-images-png-removebg-preview.png" alt="" />
+       <canvas id="canvas">
+            sorry your browser is outdated as it does not support canvas
+        </canvas>
+        </div>
+           <audio id="cs" loop>
+<source src="https://dl.dropbox.com/s/h8x6nhg2y4l4oxe/Jmd-Jingle%20Bells%20with%20Lyrics%20%20Christmas%20Songs%20HD%20%20Christmas%20Songs%20and%20Carols.m4a?raw=1">
+</audio>
+
+    </body>
+</html>
